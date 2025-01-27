@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Hotel_Management_System_WinFormsApp
 {
-    public partial class Form1 : Form
+    public partial class RegistrationForm : Form
     {
-        public Form1()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
