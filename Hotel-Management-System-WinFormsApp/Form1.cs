@@ -16,5 +16,10 @@ namespace Hotel_Management_System_WinFormsApp
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
