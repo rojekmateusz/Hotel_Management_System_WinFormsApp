@@ -73,6 +73,7 @@ namespace Hotel_Management_System_WinFormsApp
             this.login_RegisterButton.TabIndex = 3;
             this.login_RegisterButton.Text = "Register";
             this.login_RegisterButton.UseVisualStyleBackColor = false;
+            this.login_RegisterButton.Click += new System.EventHandler(this.login_RegisterButton_Click);
             // 
             // pictureBox1
             // 
@@ -162,6 +163,7 @@ namespace Hotel_Management_System_WinFormsApp
             // 
             this.login_password.Location = new System.Drawing.Point(323, 261);
             this.login_password.Name = "login_password";
+            this.login_password.PasswordChar = '*';
             this.login_password.Size = new System.Drawing.Size(294, 20);
             this.login_password.TabIndex = 2;
             // 
@@ -186,6 +188,7 @@ namespace Hotel_Management_System_WinFormsApp
             this.login_ShowPassword.TabIndex = 4;
             this.login_ShowPassword.Text = "Show Password";
             this.login_ShowPassword.UseVisualStyleBackColor = true;
+            this.login_ShowPassword.CheckedChanged += new System.EventHandler(this.login_ShowPassword_CheckedChanged);
             // 
             // close
             // 
