@@ -117,7 +117,7 @@
             this.Label_Registration.Size = new System.Drawing.Size(114, 22);
             this.Label_Registration.TabIndex = 8;
             this.Label_Registration.Text = "Registration";
-            this.Label_Registration.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // panel1
             // 
@@ -165,7 +165,7 @@
             this.label_SignIn.Size = new System.Drawing.Size(151, 18);
             this.label_SignIn.TabIndex = 1;
             this.label_SignIn.Text = "Sign in your Account";
-            this.label_SignIn.Click += new System.EventHandler(this.label6_Click);
+            
             // 
             // label5
             // 

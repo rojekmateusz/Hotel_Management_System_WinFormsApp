@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Hotel_Management_System_WinFormsApp
@@ -65,6 +64,10 @@ namespace Hotel_Management_System_WinFormsApp
                         if (dataTable.Rows.Count != 0)
                         {
                             MessageBox.Show("Login successfully!", "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            AdminMainForm adminMainForm = new AdminMainForm();
+                            adminMainForm.Show();
+                            this.Hide();
                         }
                         else
                         {
