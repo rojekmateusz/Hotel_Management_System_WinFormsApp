@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Hotel_Management_System_WinFormsApp
 {
     public partial class Form1 : Form
     {
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;Integrated Security=True;Connect Timeout=30";
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +36,44 @@ namespace Hotel_Management_System_WinFormsApp
         private void login_ShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             login_password.PasswordChar = login_ShowPassword.Checked ? '\0' : '*';
+        }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+            if (login_username.Text == "" || label_login_password.Text == "")
+            {
+                MessageBox.Show("Please fill all blank fields", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(connectionString))
+                { 
+                    connect.Open();
+
+                    string selectData = "SELECT * FROM users WHERE (username = @user AND password = @password) AND status = @status";
+
+                    using (SqlCommand command = new SqlCommand(selectData, connect))
+                    { 
+                        command.Parameters.AddWithValue("@user", login_username.Text.Trim());
+                        command.Parameters.AddWithValue("@password", label_login_password.Text.Trim());
+                        command.Parameters.AddWithValue("@status", "Active");
+                        
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count != 0)
+                        {
+                            MessageBox.Show("Login successfully!", "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect username or password", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                }    
+            }
         }
     }
 }

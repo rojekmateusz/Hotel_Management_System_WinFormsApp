@@ -14,7 +14,7 @@ namespace Hotel_Management_System_WinFormsApp
 {
     public partial class RegistrationForm : Form
     {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;Integrated Security=True;Connect Timeout=30";
         public RegistrationForm()
         {
             InitializeComponent();
@@ -69,8 +69,48 @@ namespace Hotel_Management_System_WinFormsApp
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(checkUser);
                         DataTable datatable = new DataTable();
                         dataAdapter.Fill(datatable);
-                    }
 
+                        if (datatable.Rows.Count != 0)
+                        {
+                            string tempUsername = register_UserName.Text.Substring(0, 1).ToUpper() + register_UserName.Text.Substring(1);
+                            MessageBox.Show($"{tempUsername} is existing already", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else if (register_Password.Text.Length < 8)
+                        {
+                            MessageBox.Show("Invalid password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (register_Password.Text != register_ConfirmPassword.Text)
+                        {
+                            MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            string sqlQuery = "INSERT INTO users (username, password, role, status, register_date)" +
+                                "VALUES(@user, @pass, @role, @status, @regDate)";
+
+                            using (SqlCommand command = new SqlCommand(sqlQuery, connect))
+                            {
+                                command.Parameters.AddWithValue("@user", register_UserName.Text.Trim());
+                                command.Parameters.AddWithValue("@pass", register_Password.Text.Trim());
+                                command.Parameters.AddWithValue("@role","Staff");
+                                command.Parameters.AddWithValue("@status", "Active");
+                                DateTime totay = DateTime.Now;
+                                command.Parameters.AddWithValue("@regDate", totay);
+                                command.ExecuteNonQuery();
+
+                                MessageBox.Show("Registred successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                Form1 loginForm = new Form1();
+                                loginForm.Show();
+
+                                this.Hide();
+
+                            }
+                        }
+
+
+                    }
                 }
             }
         }

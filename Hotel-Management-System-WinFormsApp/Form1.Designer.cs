@@ -178,6 +178,7 @@ namespace Hotel_Management_System_WinFormsApp
             this.login_button.TabIndex = 3;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = false;
+            this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // login_ShowPassword
             // 
