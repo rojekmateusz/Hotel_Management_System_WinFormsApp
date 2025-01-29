@@ -40,6 +40,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.userControl11 = new Hotel_Management_System_WinFormsApp.UserControl1();
+            this.admin_rooms1 = new Hotel_Management_System_WinFormsApp.admin_rooms();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -160,6 +161,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.admin_rooms1);
             this.panel3.Controls.Add(this.userControl11);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(200, 40);
@@ -177,6 +179,13 @@
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(900, 600);
             this.userControl11.TabIndex = 0;
+            // 
+            // admin_rooms1
+            // 
+            this.admin_rooms1.Location = new System.Drawing.Point(0, 0);
+            this.admin_rooms1.Name = "admin_rooms1";
+            this.admin_rooms1.Size = new System.Drawing.Size(900, 637);
+            this.admin_rooms1.TabIndex = 1;
             // 
             // AdminMainForm
             // 
@@ -213,5 +222,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private UserControl1 userControl11;
+        private admin_rooms admin_rooms1;
     }
 }

@@ -103,6 +103,7 @@ namespace Hotel_Management_System_WinFormsApp
                                 command.Parameters.AddWithValue("@date", today);
                                 command.ExecuteNonQuery();
                                 clearFields();
+                                displayData();
                                 MessageBox.Show("User added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             }
@@ -169,7 +170,7 @@ namespace Hotel_Management_System_WinFormsApp
                     {
                         connect.Open();
 
-                        string updateData = "DELETE FROM useres WHERE username = @user";
+                        string updateData = "DELETE FROM users WHERE username = @user";
 
                         using (SqlCommand command = new SqlCommand(updateData, connect))
                         {

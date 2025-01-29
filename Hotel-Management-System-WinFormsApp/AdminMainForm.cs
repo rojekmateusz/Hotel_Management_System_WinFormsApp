@@ -27,9 +27,6 @@ namespace Hotel_Management_System_WinFormsApp
             }
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
 }
