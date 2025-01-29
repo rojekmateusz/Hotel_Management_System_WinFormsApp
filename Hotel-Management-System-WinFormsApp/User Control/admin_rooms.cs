@@ -31,8 +31,15 @@ namespace Hotel_Management_System_WinFormsApp
         public admin_rooms()
         {
             InitializeComponent();
+            displayRoomData();
         }
 
+        public void displayRoomData()
+        {
+            roomsData roomsData = new roomsData();
+            dataGridView1.DataSource = roomsData.roomsDataList();
+
+        }
         private void rooms_add_button_Click(object sender, EventArgs e)
         {
             if (isEmpty())
