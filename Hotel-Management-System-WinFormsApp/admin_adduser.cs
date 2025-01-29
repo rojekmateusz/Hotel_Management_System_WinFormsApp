@@ -2,23 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Hotel_Management_System_WinFormsApp
 {
-    public partial class admin_adduser : Form
+    public partial class UserControl1 : UserControl
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
             "Integrated Security=True;Connect Timeout=30";
 
-        public admin_adduser()
+        public UserControl1()
         {
             InitializeComponent();
+            dispayData();
+        }
+
+        public void dispayData()
+        {
+            usersData usersData = new usersData();
+            dataGridView1.DataSource = usersData.listuserData();
+        }
+        public void clearFields()
+        {
+            addUser_username.Text = "";
+            addUser_password.Text = "";
+            addUser_role.SelectedItem = -1;
+            addUser_status.SelectedItem = -1;
         }
 
         public void displayData()
@@ -27,6 +41,22 @@ namespace Hotel_Management_System_WinFormsApp
             dataGridView1.DataSource = usersData.listuserData();
         }
 
+        private int getId;
+
+        private void gridDataView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            { 
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                getId = (int)row.Cells[0].Value;
+                addUser_username.Text = row.Cells[1].Value.ToString();
+                addUser_password.Text = row.Cells[2].Value.ToString();
+                addUser_role.Text = row.Cells[3].Value.ToString();
+                addUser_status.Text = row.Cells[4].Value.ToString();
+
+            }
+        }
 
         private void addUser_addButton_Click(object sender, EventArgs e)
         {
@@ -46,7 +76,7 @@ namespace Hotel_Management_System_WinFormsApp
                     {
                         checkUser.Parameters.AddWithValue("@user", addUser_username.Text.Trim());
 
-                        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(checkUser);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
 
@@ -81,20 +111,16 @@ namespace Hotel_Management_System_WinFormsApp
                 }
             }
         }
+        
 
-        public void clearFields()
+        private void addUser_clearButton_Click(object sender, EventArgs e)
         {
             addUser_username.Text = "";
             addUser_password.Text = "";
             addUser_role.SelectedItem = -1;
             addUser_status.SelectedItem = -1;
         }
-        private void addUser_clearButton_Click(object sender, EventArgs e)
-        {
-            clearFields();
-        }
-
-        // UPDATE!!!!!
+        //Update
         private void addUser_updateButton_Click(object sender, EventArgs e)
         {
 
@@ -110,7 +136,7 @@ namespace Hotel_Management_System_WinFormsApp
                     {
                         connect.Open();
 
-                        string updateData = "UPDATE useres SET password = @password, role = @role, status = @status WHERE username = @user";
+                        string updateData = "UPDATE users SET password = @password, role = @role, status = @status WHERE username = @user";
 
                         using (SqlCommand command = new SqlCommand(updateData, connect))
                         {
@@ -129,20 +155,33 @@ namespace Hotel_Management_System_WinFormsApp
             }
         }
 
-        private int getId;
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void addUser_deleteButton_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex == -1)
+            if (addUser_username.Text == "" || addUser_password.Text == "" || addUser_role.SelectedIndex == -1 || addUser_status.SelectedIndex == -1)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                MessageBox.Show("Please fill all blank fields.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show($"Are you sure you want to Delete ID {getId} ?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    using (SqlConnection connect = new SqlConnection(connectionString))
+                    {
+                        connect.Open();
 
-                getId = (int)row.Cells[0].Value;
-                addUser_username.Text = row.Cells[1].Value.ToString();
-                addUser_password.Text = row.Cells[2].Value.ToString();
-                addUser_role.Text = row.Cells[3].Value.ToString();
-                addUser_status.Text = row.Cells[4].Value.ToString();
+                        string updateData = "DELETE FROM useres WHERE username = @user";
+
+                        using (SqlCommand command = new SqlCommand(updateData, connect))
+                        {
+                            command.Parameters.AddWithValue("@user", addUser_username.Text.Trim());
+                            command.ExecuteNonQuery();
+                            displayData();
+
+                            MessageBox.Show("Deleted successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
             }
         }
     }
-
 }

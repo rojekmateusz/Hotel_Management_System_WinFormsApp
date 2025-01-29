@@ -17,6 +17,8 @@ namespace Hotel_Management_System_WinFormsApp
             InitializeComponent();
         }
 
+        
+
         private void close_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure You want to exit?", "Confirmation message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
