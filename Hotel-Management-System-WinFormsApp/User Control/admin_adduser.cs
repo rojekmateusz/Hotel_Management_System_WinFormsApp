@@ -118,8 +118,8 @@ namespace Hotel_Management_System_WinFormsApp
         {
             addUser_username.Text = "";
             addUser_password.Text = "";
-            addUser_role.SelectedItem = -1;
-            addUser_status.SelectedItem = -1;
+            addUser_role.SelectedIndex = -1;
+            addUser_status.SelectedIndex = -1;
         }
         //Update
         private void addUser_updateButton_Click(object sender, EventArgs e)
