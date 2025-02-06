@@ -148,7 +148,7 @@ namespace Hotel_Management_System_WinFormsApp
 
                             command.ExecuteNonQuery();
                             displayData();
-
+                            clearFields();
                             MessageBox.Show("Update successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }

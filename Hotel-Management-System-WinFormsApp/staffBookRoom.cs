@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Hotel_Management_System_WinFormsApp
+{
+    public partial class staffBookRoom : UserControl
+    {
+        public staffBookRoom()
+        {
+            InitializeComponent();
+            displayRooms();
+        }
+
+        public void displayRooms()
+        {
+            roomsData roomsData = new roomsData();
+            dataGridView1.DataSource = roomsData.roomsDataList();
+        }
+    }
+}

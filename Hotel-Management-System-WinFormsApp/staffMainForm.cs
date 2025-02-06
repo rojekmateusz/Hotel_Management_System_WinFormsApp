@@ -7,17 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace Hotel_Management_System_WinFormsApp
 {
-    public partial class AdminMainForm : Form
+    public partial class staffMainForm : Form
     {
-        public AdminMainForm()
+        public staffMainForm()
         {
             InitializeComponent();
         }
 
-        
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
 
         private void close_Click(object sender, EventArgs e)
         {
@@ -25,15 +32,6 @@ namespace Hotel_Management_System_WinFormsApp
             {
                 Application.Exit();
             }
-        }
-
-        
-
-        private void logout_Click_1(object sender, EventArgs e)
-        {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Hotel_Management_System_WinFormsApp
 {
-    partial class AdminMainForm
+    partial class staffMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.staffBookRoom1 = new Hotel_Management_System_WinFormsApp.staffBookRoom();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logout = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dashbord_button = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.userControl11 = new Hotel_Management_System_WinFormsApp.UserControl1();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.close);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 40);
-            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -67,6 +56,17 @@
             this.label1.Size = new System.Drawing.Size(226, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Hotel Managment System";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.close);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 40);
+            this.panel1.TabIndex = 3;
             // 
             // close
             // 
@@ -81,6 +81,24 @@
             this.close.Text = "X";
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.staffBookRoom1);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1100, 640);
+            this.panel3.TabIndex = 5;
+            // 
+            // staffBookRoom1
+            // 
+            this.staffBookRoom1.Location = new System.Drawing.Point(200, 3);
+            this.staffBookRoom1.Name = "staffBookRoom1";
+            this.staffBookRoom1.Size = new System.Drawing.Size(900, 600);
+            this.staffBookRoom1.TabIndex = 3;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -90,10 +108,10 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dashbord_button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 40);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 600);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(200, 640);
+            this.panel2.TabIndex = 2;
             // 
             // logout
             // 
@@ -108,7 +126,7 @@
             this.logout.TabIndex = 2;
             this.logout.Text = "LOGOUT";
             this.logout.UseVisualStyleBackColor = false;
-            this.logout.Click += new System.EventHandler(this.logout_Click_1);
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // button3
             // 
@@ -131,7 +149,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 31);
             this.button2.TabIndex = 2;
-            this.button2.Text = "ROOMS";
+            this.button2.Text = "AVAILABLE ROOMS";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -143,7 +161,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 31);
             this.button1.TabIndex = 2;
-            this.button1.Text = "ADD USER";
+            this.button1.Text = "BOOK ROOM";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // dashbord_button
@@ -158,61 +176,42 @@
             this.dashbord_button.Text = "DASHBOARD";
             this.dashbord_button.UseVisualStyleBackColor = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.userControl11);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(200, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(900, 600);
-            this.panel3.TabIndex = 2;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(0, 0);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(900, 600);
-            this.userControl11.TabIndex = 0;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // AdminMainForm
+            // staffMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 640);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminMainForm";
+            this.Name = "staffMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminMainForm";
+            this.Text = "staffMainForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        protected internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         protected internal System.Windows.Forms.Label close;
-        protected internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button dashbord_button;
+        private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button logout;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private UserControl1 userControl11;
+        private System.Windows.Forms.Button dashbord_button;
+        private staffBookRoom staffBookRoom1;
     }
 }

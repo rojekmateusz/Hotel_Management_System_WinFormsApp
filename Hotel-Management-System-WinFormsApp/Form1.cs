@@ -21,7 +21,7 @@ namespace Hotel_Management_System_WinFormsApp
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
 
         private void login_RegisterButton_Click(object sender, EventArgs e)
@@ -46,17 +46,17 @@ namespace Hotel_Management_System_WinFormsApp
             else
             {
                 using (SqlConnection connect = new SqlConnection(connectionString))
-                { 
+                {
                     connect.Open();
 
                     string selectData = "SELECT * FROM users WHERE (username = @user AND password = @password) AND status = @status";
 
                     using (SqlCommand command = new SqlCommand(selectData, connect))
-                    { 
+                    {
                         command.Parameters.AddWithValue("@user", login_username.Text.Trim());
-                        command.Parameters.AddWithValue("@password", label_login_password.Text.Trim());
+                        command.Parameters.AddWithValue("@password", login_password.Text.Trim());
                         command.Parameters.AddWithValue("@status", "Active");
-                        
+
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
@@ -65,9 +65,30 @@ namespace Hotel_Management_System_WinFormsApp
                         {
                             MessageBox.Show("Login successfully!", "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            AdminMainForm adminMainForm = new AdminMainForm();
-                            adminMainForm.Show();
-                            this.Hide();
+                            string selectRole = "SELECT role FROM users WHERE username = @user AND password = @password";
+                            using (SqlCommand getRole = new SqlCommand(selectRole, connect))
+                            {
+                                getRole.Parameters.AddWithValue("@user", login_username.Text.Trim());
+                                getRole.Parameters.AddWithValue("@password", login_password.Text.Trim());
+
+                                string userRole = getRole.ExecuteScalar() as string;
+
+                                if (userRole == "Admin")
+                                {
+                                    AdminMainForm adminMainForm = new AdminMainForm();
+                                    adminMainForm.Show();
+                                    this.Hide();
+                                }
+                                else if (userRole == "Staff")
+                                {
+                                    staffMainForm staffMainForm = new staffMainForm();
+                                    staffMainForm.Show();
+                                    this.Hide();
+                                }
+
+                            }
+
+
                         }
                         else
                         {
@@ -75,7 +96,7 @@ namespace Hotel_Management_System_WinFormsApp
                         }
                     }
 
-                }    
+                }
             }
         }
     }
