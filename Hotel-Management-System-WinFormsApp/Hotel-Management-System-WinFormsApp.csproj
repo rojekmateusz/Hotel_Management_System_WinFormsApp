@@ -58,6 +58,13 @@
     <Compile Include="admin_dashboard.Designer.cs">
       <DependentUpon>admin_dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="clientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clientInfo.Designer.cs">
+      <DependentUpon>clientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hotelData.cs" />
     <Compile Include="roomsData.cs" />
     <Compile Include="staffBookRoom.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_dashboard.resx">
       <DependentUpon>admin_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clientInfo.resx">
+      <DependentUpon>clientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staffBookRoom.resx">
       <DependentUpon>staffBookRoom.cs</DependentUpon>

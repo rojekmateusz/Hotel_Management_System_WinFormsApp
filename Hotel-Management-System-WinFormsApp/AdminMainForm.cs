@@ -31,9 +31,12 @@ namespace Hotel_Management_System_WinFormsApp
 
         private void logout_Click_1(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            if (MessageBox.Show("Are You sure you want to logout?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
         }
     }
 }
