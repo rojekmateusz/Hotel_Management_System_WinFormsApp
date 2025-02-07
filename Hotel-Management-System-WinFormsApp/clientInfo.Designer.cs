@@ -244,6 +244,7 @@
             this.clientInfo_clearButton.TabIndex = 7;
             this.clientInfo_clearButton.Text = "Clear";
             this.clientInfo_clearButton.UseVisualStyleBackColor = true;
+            this.clientInfo_clearButton.Click += new System.EventHandler(this.clientInfo_clearButton_Click);
             // 
             // clientInfo
             // 
