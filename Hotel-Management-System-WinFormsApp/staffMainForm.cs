@@ -36,5 +36,45 @@ namespace Hotel_Management_System_WinFormsApp
                 Application.Exit();
             }
         }
+
+        private void dashbord_button_Click(object sender, EventArgs e)
+        {
+            admin_dashboard1.Visible = true;
+            admin_customers1.Visible = false;
+            staffBookRoom1.Visible = false;
+           
+
+            admin_dashboard admin_Dashboard = admin_dashboard1 as admin_dashboard;
+            if (admin_Dashboard != null)
+            {
+                admin_Dashboard.refreshData();
+            }
+        }
+
+        private void bookroom_button_Click(object sender, EventArgs e)
+        {
+            admin_dashboard1.Visible = false;
+            admin_customers1.Visible = false;
+            staffBookRoom1.Visible = true;
+            
+            staffBookRoom staff_bookRoom = staffBookRoom1 as staffBookRoom;
+            if (staff_bookRoom != null)
+            {
+                staff_bookRoom.refreshData();
+            }
+        }
+
+        private void customer_button_Click(object sender, EventArgs e)
+        {
+            admin_dashboard1.Visible = false;
+            admin_customers1.Visible = true;
+            staffBookRoom1.Visible = false;
+
+            admin_customers admin_Customers = admin_customers1 as admin_customers;
+            if (admin_Customers != null)
+            {
+                admin_Customers.refreshData();
+            }
+        }
     }
 }

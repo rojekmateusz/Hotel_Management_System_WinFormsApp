@@ -34,6 +34,16 @@ namespace Hotel_Management_System_WinFormsApp
             displayRoomData();
         }
 
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayRoomData();
+        }
+
         public void displayRoomData()
         {
             roomsData roomsData = new roomsData();

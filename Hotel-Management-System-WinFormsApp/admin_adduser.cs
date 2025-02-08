@@ -11,14 +11,24 @@ using System.Windows.Forms;
 
 namespace Hotel_Management_System_WinFormsApp
 {
-    public partial class UserControl1 : UserControl
+    public partial class admin_adduser : UserControl
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
             "Integrated Security=True;Connect Timeout=30";
 
-        public UserControl1()
+        public admin_adduser()
         {
             InitializeComponent();
+            dispayData();
+        }
+
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            { 
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
             dispayData();
         }
 

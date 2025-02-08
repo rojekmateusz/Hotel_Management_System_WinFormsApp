@@ -1,6 +1,6 @@
 ﻿namespace Hotel_Management_System_WinFormsApp
 {
-    partial class UserControl1
+    partial class admin_adduser
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -243,13 +243,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // UserControl1
+            // admin_adduser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "UserControl1";
+            this.Name = "admin_adduser";
             this.Size = new System.Drawing.Size(900, 600);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

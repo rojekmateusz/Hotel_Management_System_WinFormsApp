@@ -15,6 +15,22 @@ namespace Hotel_Management_System_WinFormsApp
         public admin_customers()
         {
             InitializeComponent();
+            displayCustomers();
+        }
+
+        public void refreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)refreshData);
+                return;
+            }
+            displayCustomers();
+        }
+        public void displayCustomers()
+        { 
+            customersData customersData = new customersData();
+            dataGridView1.DataSource = customersData.customersListData();
         }
     }
 }

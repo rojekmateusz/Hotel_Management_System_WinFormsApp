@@ -31,18 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.staffBookRoom1 = new Hotel_Management_System_WinFormsApp.staffBookRoom();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logout = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.customer_button = new System.Windows.Forms.Button();
+            this.bookroom_button = new System.Windows.Forms.Button();
             this.dashbord_button = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.admin_customers1 = new Hotel_Management_System_WinFormsApp.admin_customers();
+            this.admin_customers2 = new Hotel_Management_System_WinFormsApp.admin_customers();
+            this.staffBookRoom1 = new Hotel_Management_System_WinFormsApp.staffBookRoom();
+            this.admin_dashboard1 = new Hotel_Management_System_WinFormsApp.admin_dashboard();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +63,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.admin_customers1);
             this.panel1.Controls.Add(this.close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -81,36 +84,21 @@
             this.close.Text = "X";
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
-            // panel3
+            // openFileDialog1
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.staffBookRoom1);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 640);
-            this.panel3.TabIndex = 5;
-            // 
-            // staffBookRoom1
-            // 
-            this.staffBookRoom1.Location = new System.Drawing.Point(200, 3);
-            this.staffBookRoom1.Name = "staffBookRoom1";
-            this.staffBookRoom1.Size = new System.Drawing.Size(900, 600);
-            this.staffBookRoom1.TabIndex = 3;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Controls.Add(this.logout);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.customer_button);
+            this.panel2.Controls.Add(this.bookroom_button);
             this.panel2.Controls.Add(this.dashbord_button);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 640);
+            this.panel2.Size = new System.Drawing.Size(200, 600);
             this.panel2.TabIndex = 2;
             // 
             // logout
@@ -128,41 +116,31 @@
             this.logout.UseVisualStyleBackColor = false;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
-            // button3
+            // customer_button
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(16, 213);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 31);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "CUSTOMERS";
-            this.button3.UseVisualStyleBackColor = false;
+            this.customer_button.BackColor = System.Drawing.SystemColors.Control;
+            this.customer_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.customer_button.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.customer_button.Location = new System.Drawing.Point(16, 164);
+            this.customer_button.Name = "customer_button";
+            this.customer_button.Size = new System.Drawing.Size(169, 31);
+            this.customer_button.TabIndex = 2;
+            this.customer_button.Text = "CUSTOMERS";
+            this.customer_button.UseVisualStyleBackColor = false;
+            this.customer_button.Click += new System.EventHandler(this.customer_button_Click);
             // 
-            // button2
+            // bookroom_button
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(16, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(169, 31);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "AVAILABLE ROOMS";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(16, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "BOOK ROOM";
-            this.button1.UseVisualStyleBackColor = false;
+            this.bookroom_button.BackColor = System.Drawing.SystemColors.Control;
+            this.bookroom_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bookroom_button.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bookroom_button.Location = new System.Drawing.Point(16, 115);
+            this.bookroom_button.Name = "bookroom_button";
+            this.bookroom_button.Size = new System.Drawing.Size(169, 31);
+            this.bookroom_button.TabIndex = 2;
+            this.bookroom_button.Text = "BOOK ROOM";
+            this.bookroom_button.UseVisualStyleBackColor = false;
+            this.bookroom_button.Click += new System.EventHandler(this.bookroom_button_Click);
             // 
             // dashbord_button
             // 
@@ -175,26 +153,64 @@
             this.dashbord_button.TabIndex = 2;
             this.dashbord_button.Text = "DASHBOARD";
             this.dashbord_button.UseVisualStyleBackColor = false;
+            this.dashbord_button.Click += new System.EventHandler(this.dashbord_button_Click);
             // 
-            // openFileDialog1
+            // panel3
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.admin_dashboard1);
+            this.panel3.Controls.Add(this.staffBookRoom1);
+            this.panel3.Controls.Add(this.admin_customers2);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1100, 600);
+            this.panel3.TabIndex = 5;
+            // 
+            // admin_customers1
+            // 
+            this.admin_customers1.Location = new System.Drawing.Point(200, 0);
+            this.admin_customers1.Name = "admin_customers1";
+            this.admin_customers1.Size = new System.Drawing.Size(900, 600);
+            this.admin_customers1.TabIndex = 4;
+            // 
+            // admin_customers2
+            // 
+            this.admin_customers2.Location = new System.Drawing.Point(200, -6);
+            this.admin_customers2.Name = "admin_customers2";
+            this.admin_customers2.Size = new System.Drawing.Size(900, 600);
+            this.admin_customers2.TabIndex = 3;
+            // 
+            // staffBookRoom1
+            // 
+            this.staffBookRoom1.Location = new System.Drawing.Point(200, 0);
+            this.staffBookRoom1.Name = "staffBookRoom1";
+            this.staffBookRoom1.Size = new System.Drawing.Size(900, 600);
+            this.staffBookRoom1.TabIndex = 4;
+            // 
+            // admin_dashboard1
+            // 
+            this.admin_dashboard1.Location = new System.Drawing.Point(200, 0);
+            this.admin_dashboard1.Name = "admin_dashboard1";
+            this.admin_dashboard1.Size = new System.Drawing.Size(900, 600);
+            this.admin_dashboard1.TabIndex = 5;
             // 
             // staffMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 640);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "staffMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "staffMainForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -204,14 +220,16 @@
         protected internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         protected internal System.Windows.Forms.Label close;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private admin_customers admin_customers1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button logout;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button customer_button;
+        private System.Windows.Forms.Button bookroom_button;
         private System.Windows.Forms.Button dashbord_button;
+        private System.Windows.Forms.Panel panel3;
+        private admin_dashboard admin_dashboard1;
         private staffBookRoom staffBookRoom1;
+        private admin_customers admin_customers2;
     }
 }
