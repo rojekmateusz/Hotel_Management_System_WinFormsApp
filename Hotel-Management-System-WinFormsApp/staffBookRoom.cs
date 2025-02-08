@@ -67,47 +67,63 @@ namespace Hotel_Management_System_WinFormsApp
 
         private void staffBook_bookButton_Click(object sender, EventArgs e)
         {
-            hotelData.roomID = staffBook_roomID.Text;
-            hotelData.fromDate = staffBook_from.Value;
-            hotelData.toDate = staffBook_to.Value;
-            hotelData.price = staffBook_total.Text;
-            
-            Form form = new Form();
-
-            try
+            if (staffBook_status.Text != "Availabel")
             {
-                using (clientInfo ciform = new clientInfo())
-                { 
-                    form.StartPosition = FormStartPosition.Manual;  
-                    form.FormBorderStyle = FormBorderStyle.None;
-                    form.Opacity = .80d;
-                    form.WindowState = FormWindowState.Maximized;
-                    form.BackColor = Color.Black;
-                    form.TopMost = true;
-                    form.Location = this.Location;
-                    form.ShowInTaskbar = false; 
-                    form.Show();
+                MessageBox.Show("Room is unavailabel!", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                hotelData.roomID = staffBook_roomID.Text;
+                hotelData.fromDate = staffBook_from.Value;
+                hotelData.toDate = staffBook_to.Value;
+                hotelData.price = staffBook_total.Text;
 
-                    ciform.Owner = form;
-                    ciform.ShowDialog();
+                Form form = new Form();
 
-                    form.Dispose();
+                try
+                {
+                    using (clientInfo ciform = new clientInfo())
+                    {
+                        form.StartPosition = FormStartPosition.Manual;
+                        form.FormBorderStyle = FormBorderStyle.None;
+                        form.Opacity = .80d;
+                        form.WindowState = FormWindowState.Maximized;
+                        form.BackColor = Color.Black;
+                        form.TopMost = true;
+                        form.Location = this.Location;
+                        form.ShowInTaskbar = false;
+                        form.Show();
 
+                        ciform.Owner = form;
+                        ciform.ShowDialog();
+
+                        form.Dispose();
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Message" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                finally
+                {
+                    form.Dispose();
+                }   
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Message" + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            finally
-            {
-                form.Dispose();
-            }
+            
         }
 
-        
+        private void staffBook_clearButton_Click(object sender, EventArgs e)
+        {
+            staffBook_roomID.Text = "---------------";
+            staffBook_type.Text = "---------------";
+            staffBook_name.Text = "---------------";
+            staffBook_status.Text = "---------------";
+            staffBook_regularPrice.Text = "---------------";
+            staffBook_total.Text = "0.00";
 
+        }
     }
 }

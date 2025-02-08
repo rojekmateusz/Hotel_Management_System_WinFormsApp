@@ -39,7 +39,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.staffBook_total = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.staffBook_regularPrice = new System.Windows.Forms.Label();
             this.staffBook_status = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.staffBook_name = new System.Windows.Forms.Label();
             this.staffBook_type = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.addUser_addButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.staffBook_regularPrice = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,6 +94,7 @@
             this.staffBook_clearButton.TabIndex = 6;
             this.staffBook_clearButton.Text = "Clear";
             this.staffBook_clearButton.UseVisualStyleBackColor = true;
+            this.staffBook_clearButton.Click += new System.EventHandler(this.staffBook_clearButton_Click);
             // 
             // staffBook_printButton
             // 
@@ -167,7 +168,6 @@
             this.staffBook_total.Size = new System.Drawing.Size(31, 15);
             this.staffBook_total.TabIndex = 4;
             this.staffBook_total.Text = "0.00";
-            
             // 
             // label9
             // 
@@ -179,6 +179,16 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "TOTAL PRICE:";
             // 
+            // staffBook_regularPrice
+            // 
+            this.staffBook_regularPrice.AutoSize = true;
+            this.staffBook_regularPrice.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.staffBook_regularPrice.Location = new System.Drawing.Point(158, 174);
+            this.staffBook_regularPrice.Name = "staffBook_regularPrice";
+            this.staffBook_regularPrice.Size = new System.Drawing.Size(67, 15);
+            this.staffBook_regularPrice.TabIndex = 4;
+            this.staffBook_regularPrice.Text = "---------------";
+            // 
             // staffBook_status
             // 
             this.staffBook_status.AutoSize = true;
@@ -188,6 +198,16 @@
             this.staffBook_status.Size = new System.Drawing.Size(67, 15);
             this.staffBook_status.TabIndex = 4;
             this.staffBook_status.Text = "---------------";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label.Location = new System.Drawing.Point(49, 174);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(87, 15);
+            this.label.TabIndex = 4;
+            this.label.Text = "Regular Price:";
             // 
             // label6
             // 
@@ -298,26 +318,6 @@
             this.label5.Size = new System.Drawing.Size(127, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Available Room\'s";
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label.Location = new System.Drawing.Point(49, 174);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(87, 15);
-            this.label.TabIndex = 4;
-            this.label.Text = "Regular Price:";
-            // 
-            // staffBook_regularPrice
-            // 
-            this.staffBook_regularPrice.AutoSize = true;
-            this.staffBook_regularPrice.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.staffBook_regularPrice.Location = new System.Drawing.Point(158, 174);
-            this.staffBook_regularPrice.Name = "staffBook_regularPrice";
-            this.staffBook_regularPrice.Size = new System.Drawing.Size(67, 15);
-            this.staffBook_regularPrice.TabIndex = 4;
-            this.staffBook_regularPrice.Text = "---------------";
             // 
             // staffBookRoom
             // 
