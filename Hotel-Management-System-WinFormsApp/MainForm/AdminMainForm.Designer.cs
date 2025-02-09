@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
             this.admin_mainform = new System.Windows.Forms.Panel();
             this.logout = new System.Windows.Forms.Button();
             this.customer_button = new System.Windows.Forms.Button();
@@ -38,55 +35,22 @@
             this.adduser_button = new System.Windows.Forms.Button();
             this.dashbord_button = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.admin_customers1 = new Hotel_Management_System_WinFormsApp.admin_customers();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.admin_rooms1 = new Hotel_Management_System_WinFormsApp.admin_rooms();
-            this.admin_adduser1 = new Hotel_Management_System_WinFormsApp.admin_adduser();
+            this.close = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.admin_dashboard1 = new Hotel_Management_System_WinFormsApp.admin_dashboard();
-            this.panel1.SuspendLayout();
+            this.admin_adduser1 = new Hotel_Management_System_WinFormsApp.admin_adduser();
+            this.admin_rooms1 = new Hotel_Management_System_WinFormsApp.admin_rooms();
+            this.admin_customers1 = new Hotel_Management_System_WinFormsApp.admin_customers();
             this.admin_mainform.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.close);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 40);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 22);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Hotel Managment System";
-            // 
-            // close
-            // 
-            this.close.AutoSize = true;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.close.ForeColor = System.Drawing.Color.White;
-            this.close.Location = new System.Drawing.Point(1067, 9);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(21, 22);
-            this.close.TabIndex = 5;
-            this.close.Text = "X";
-            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // admin_mainform
             // 
-            this.admin_mainform.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.admin_mainform.BackColor = System.Drawing.Color.DarkOrange;
             this.admin_mainform.Controls.Add(this.logout);
             this.admin_mainform.Controls.Add(this.customer_button);
             this.admin_mainform.Controls.Add(this.rooms_button);
@@ -100,8 +64,9 @@
             // 
             // logout
             // 
-            this.logout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.logout.BackColor = System.Drawing.Color.Black;
             this.logout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.logout.ForeColor = System.Drawing.Color.White;
@@ -178,23 +143,52 @@
             this.panel3.Size = new System.Drawing.Size(900, 600);
             this.panel3.TabIndex = 2;
             // 
-            // admin_customers1
-            // 
-            this.admin_customers1.Location = new System.Drawing.Point(0, -6);
-            this.admin_customers1.Name = "admin_customers1";
-            this.admin_customers1.Size = new System.Drawing.Size(900, 600);
-            this.admin_customers1.TabIndex = 0;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // admin_rooms1
+            // close
             // 
-            this.admin_rooms1.Location = new System.Drawing.Point(0, 0);
-            this.admin_rooms1.Name = "admin_rooms1";
-            this.admin_rooms1.Size = new System.Drawing.Size(900, 600);
-            this.admin_rooms1.TabIndex = 1;
+            this.close.AutoSize = true;
+            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.close.ForeColor = System.Drawing.Color.White;
+            this.close.Location = new System.Drawing.Point(1067, 9);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(21, 22);
+            this.close.TabIndex = 5;
+            this.close.Text = "X";
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 22);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Hotel Managment System";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.close);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1100, 40);
+            this.panel1.TabIndex = 0;
+            // 
+            // admin_dashboard1
+            // 
+            this.admin_dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.admin_dashboard1.Name = "admin_dashboard1";
+            this.admin_dashboard1.Size = new System.Drawing.Size(900, 600);
+            this.admin_dashboard1.TabIndex = 3;
             // 
             // admin_adduser1
             // 
@@ -203,12 +197,19 @@
             this.admin_adduser1.Size = new System.Drawing.Size(900, 600);
             this.admin_adduser1.TabIndex = 2;
             // 
-            // admin_dashboard1
+            // admin_rooms1
             // 
-            this.admin_dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.admin_dashboard1.Name = "admin_dashboard1";
-            this.admin_dashboard1.Size = new System.Drawing.Size(900, 600);
-            this.admin_dashboard1.TabIndex = 3;
+            this.admin_rooms1.Location = new System.Drawing.Point(0, 0);
+            this.admin_rooms1.Name = "admin_rooms1";
+            this.admin_rooms1.Size = new System.Drawing.Size(900, 600);
+            this.admin_rooms1.TabIndex = 1;
+            // 
+            // admin_customers1
+            // 
+            this.admin_customers1.Location = new System.Drawing.Point(0, -6);
+            this.admin_customers1.Name = "admin_customers1";
+            this.admin_customers1.Size = new System.Drawing.Size(900, 600);
+            this.admin_customers1.TabIndex = 0;
             // 
             // AdminMainForm
             // 
@@ -223,19 +224,15 @@
             this.Name = "AdminMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMainForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.admin_mainform.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        protected internal System.Windows.Forms.Label close;
-        protected internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel admin_mainform;
         private System.Windows.Forms.Button dashbord_button;
         private System.Windows.Forms.Button customer_button;
@@ -248,5 +245,8 @@
         private admin_dashboard admin_dashboard1;
         private admin_adduser admin_adduser1;
         private admin_rooms admin_rooms1;
+        protected internal System.Windows.Forms.Label close;
+        protected internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -105,5 +105,10 @@ namespace Hotel_Management_System_WinFormsApp
                 }
             }
         }
+
+        private void label_SignIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

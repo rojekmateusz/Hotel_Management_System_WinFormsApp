@@ -99,5 +99,10 @@ namespace Hotel_Management_System_WinFormsApp
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
