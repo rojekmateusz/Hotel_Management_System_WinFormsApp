@@ -33,11 +33,11 @@ namespace Hotel_Management_System_WinFormsApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.login_RegisterButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_welcome = new System.Windows.Forms.Label();
             this.label_login_username = new System.Windows.Forms.Label();
@@ -80,17 +80,6 @@ namespace Hotel_Management_System_WinFormsApp
             this.login_RegisterButton.Text = "Sign Up";
             this.login_RegisterButton.UseVisualStyleBackColor = false;
             this.login_RegisterButton.Click += new System.EventHandler(this.login_RegisterButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox1.Size = new System.Drawing.Size(144, 143);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label6
             // 
@@ -140,6 +129,17 @@ namespace Hotel_Management_System_WinFormsApp
             this.label5.Text = "HOTEL";
             this.label5.Click += new System.EventHandler(this.label2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 128);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 143);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -154,7 +154,7 @@ namespace Hotel_Management_System_WinFormsApp
             // 
             this.label_welcome.AutoSize = true;
             this.label_welcome.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_welcome.Location = new System.Drawing.Point(315, 62);
+            this.label_welcome.Location = new System.Drawing.Point(316, 87);
             this.label_welcome.Name = "label_welcome";
             this.label_welcome.Size = new System.Drawing.Size(237, 37);
             this.label_welcome.TabIndex = 1;

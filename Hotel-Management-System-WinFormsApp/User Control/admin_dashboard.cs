@@ -79,6 +79,23 @@ namespace Hotel_Management_System_WinFormsApp
             }
         }
 
+        public void displayOccupiedRooms()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string selectData = "SELECT COUNT(id) FROM rooms WHERE status = 'Unavailable'";
+                using (SqlCommand cmd = new SqlCommand(selectData, conn))
+                {
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        occupiedRooms.Text = result.ToString();
+                    }
+                }
+            }
+        }
+
         public void displayTodaysProfit()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
