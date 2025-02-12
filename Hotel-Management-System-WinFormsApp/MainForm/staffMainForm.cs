@@ -76,5 +76,7 @@ namespace Hotel_Management_System_WinFormsApp
                 admin_Customers.refreshData();
             }
         }
+
+        
     }
 }

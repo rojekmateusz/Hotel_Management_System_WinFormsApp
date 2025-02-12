@@ -49,13 +49,13 @@ namespace Hotel_Management_System_WinFormsApp
                 {
                     connect.Open();
 
-                    string selectData = "SELECT * FROM users WHERE (username = @user AND password = @password) AND status = @status";
+                    string selectData = "SELECT * FROM users WHERE username = @user AND password = @password";
 
                     using (SqlCommand command = new SqlCommand(selectData, connect))
                     {
                         command.Parameters.AddWithValue("@user", login_username.Text.Trim());
                         command.Parameters.AddWithValue("@password", login_password.Text.Trim());
-                        command.Parameters.AddWithValue("@status", "Active");
+                        
 
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                         DataTable dataTable = new DataTable();
@@ -64,6 +64,16 @@ namespace Hotel_Management_System_WinFormsApp
                         if (dataTable.Rows.Count != 0)
                         {
                             MessageBox.Show("Login successfully!", "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            string InsertStatus = "UPDATE users SET status = @status WHERE username = @user AND password = @password";
+
+                            using(SqlCommand cmd = new SqlCommand(InsertStatus, connect))
+                            {
+                                cmd.Parameters.AddWithValue("@user", login_username.Text.Trim());
+                                cmd.Parameters.AddWithValue("@password", login_password.Text.Trim());
+                                cmd.Parameters.AddWithValue("@status", "Active");
+                                cmd.ExecuteNonQuery();                                                            
+                            }
 
                             string selectRole = "SELECT role FROM users WHERE username = @user AND password = @password";
                             using (SqlCommand getRole = new SqlCommand(selectRole, connect))

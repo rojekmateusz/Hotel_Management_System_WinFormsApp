@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Hotel_Management_System_WinFormsApp
 {
+
     public partial class AdminMainForm : Form
     {
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;Integrated Security=True;Connect Timeout=30";
+
         public AdminMainForm()
         {
             InitializeComponent();
@@ -36,6 +40,25 @@ namespace Hotel_Management_System_WinFormsApp
                 Form1 form1 = new Form1();
                 form1.Show();
                 this.Hide();
+            }
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string selectData = "SELECT * FROM users WHERE status = @status";
+
+                using (SqlCommand command = new SqlCommand(selectData, connection))
+                {
+                    command.Parameters.AddWithValue("@status", "Active");
+
+                    string changeStatus = "UPDATE users SET status = @status";
+                    using (SqlCommand cmd = new SqlCommand(changeStatus, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@status", "Inactive");
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
         }
 

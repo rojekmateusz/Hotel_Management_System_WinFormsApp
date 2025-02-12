@@ -135,5 +135,10 @@ namespace Hotel_Management_System_WinFormsApp
             staffBook_total.Text = "0.00";
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainForm));
             this.admin_mainform = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Button();
             this.customer_button = new System.Windows.Forms.Button();
             this.rooms_button = new System.Windows.Forms.Button();
             this.adduser_button = new System.Windows.Forms.Button();
             this.dashbord_button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.admin_dashboard1 = new Hotel_Management_System_WinFormsApp.admin_dashboard();
             this.admin_adduser1 = new Hotel_Management_System_WinFormsApp.admin_adduser();
             this.admin_rooms1 = new Hotel_Management_System_WinFormsApp.admin_rooms();
             this.admin_customers1 = new Hotel_Management_System_WinFormsApp.admin_customers();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.admin_mainform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -64,24 +64,13 @@
             this.admin_mainform.Size = new System.Drawing.Size(200, 640);
             this.admin_mainform.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox1.Size = new System.Drawing.Size(148, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // close
             // 
             this.close.AutoSize = true;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.close.ForeColor = System.Drawing.Color.Black;
-            this.close.Location = new System.Drawing.Point(12, 9);
+            this.close.Location = new System.Drawing.Point(12, 8);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(17, 18);
             this.close.TabIndex = 5;
@@ -153,13 +142,24 @@
             this.dashbord_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.dashbord_button.Font = new System.Drawing.Font("Montserrat SemiBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dashbord_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.dashbord_button.Location = new System.Drawing.Point(16, 283);
+            this.dashbord_button.Location = new System.Drawing.Point(16, 284);
             this.dashbord_button.Name = "dashbord_button";
             this.dashbord_button.Size = new System.Drawing.Size(169, 31);
             this.dashbord_button.TabIndex = 2;
             this.dashbord_button.Text = "DASHBOARD";
             this.dashbord_button.UseVisualStyleBackColor = false;
             this.dashbord_button.Click += new System.EventHandler(this.dashbord_button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Size = new System.Drawing.Size(148, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -173,10 +173,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(900, 640);
             this.panel3.TabIndex = 2;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // admin_dashboard1
             // 
@@ -208,6 +204,10 @@
             this.admin_customers1.Name = "admin_customers1";
             this.admin_customers1.Size = new System.Drawing.Size(900, 640);
             this.admin_customers1.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // AdminMainForm
             // 
