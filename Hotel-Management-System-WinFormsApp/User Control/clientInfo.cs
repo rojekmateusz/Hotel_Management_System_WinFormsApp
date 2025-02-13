@@ -85,7 +85,7 @@ namespace Hotel_Management_System_WinFormsApp
                             cmd.Parameters.AddWithValue("@date_from", hotelData.fromDate);
                             cmd.Parameters.AddWithValue("@date_to", hotelData.toDate);
                             DateTime today = DateTime.Today;
-                            cmd.Parameters.AddWithValue("@date_book", today.ToString());
+                            cmd.Parameters.AddWithValue("@date_book", today);
                             cmd.ExecuteNonQuery();
                             updateRoomStatus();
                             MessageBox.Show("Booked successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);

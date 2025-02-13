@@ -21,6 +21,7 @@ namespace Hotel_Management_System_WinFormsApp
     
         public int ID { get; set; }
         public string BookID { get; set; }
+        public string Fullname { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
         public string Gender { get; set; }
@@ -51,6 +52,7 @@ namespace Hotel_Management_System_WinFormsApp
 
                         customData.ID = (int)reader["id"];
                         customData.BookID = reader["book_id"].ToString();
+                        customData.Fullname = reader["full_name"].ToString();
                         customData.Email = reader["email"].ToString();
                         customData.Contact = reader["contact"].ToString();
                         customData.Gender = reader["gender"].ToString();

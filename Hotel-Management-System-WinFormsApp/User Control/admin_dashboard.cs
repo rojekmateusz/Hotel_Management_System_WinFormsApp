@@ -26,6 +26,7 @@ namespace Hotel_Management_System_WinFormsApp
             displayTodaysProfit();
             displayTotalProfit();
             displayOccupiedRooms();
+            displayNotebook();
 
         }
 
@@ -41,25 +42,25 @@ namespace Hotel_Management_System_WinFormsApp
             displayTodaysProfit();
             displayTotalProfit();
             displayOccupiedRooms();
-
+            displayNotebook();
 
         }
 
         public void displayTotalStaff()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
-            { 
+            {
                 conn.Open();
                 string selectData = "SELECT COUNT(id) FROM users WHERE role = 'Staff'";
                 using (SqlCommand cmd = new SqlCommand(selectData, conn))
                 {
                     object result = cmd.ExecuteScalar();
                     if (result != DBNull.Value)
-                    { 
+                    {
                         totalStaff.Text = result.ToString();
                     }
                 }
-            }    
+            }
         }
 
         public void displayAvailabelRooms()
@@ -167,7 +168,7 @@ namespace Hotel_Management_System_WinFormsApp
 
                     // Ładowanie ikony pogody
                     pictureBoxWeather.Load(iconUrl); // Załaduj ikonę do PictureBox
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -175,35 +176,49 @@ namespace Hotel_Management_System_WinFormsApp
                 }
             }
         }
-
-
-        private void txtCity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adduser_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dashboard_saveButton_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
-            { 
+            {
                 connection.Open();
-                string selectData = "SELECT * FROM users WHERE ";
+                string selectData = "SELECT * FROM users WHERE status = @status";
+                using (SqlCommand command = new SqlCommand(selectData, connection))
+                {
+                    command.Parameters.AddWithValue("@status", "Active");
+
+                    string changeStatus = "UPDATE users SET Notepad = @notepad WHERE status = @status";
+                    using (SqlCommand cmd = new SqlCommand(changeStatus, connection))
+                    {
+                        var text = richTextBox1.Text;
+                        cmd.Parameters.AddWithValue("@notepad", text);
+                        cmd.Parameters.AddWithValue("@status", "Active");
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
+        }
+
+        public void displayNotebook()
+        {
+          using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string selectData = "SELECT Notepad FROM users WHERE status = @status";
+                using (SqlCommand cmd = new SqlCommand(selectData, conn))
+                {
+                    cmd.Parameters.AddWithValue("@status", "Active");
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        richTextBox1.Text = result.ToString();
+                    }
+                }
+            }
+        }
+
+        private void dashboard_clearButton_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
         }
     }
 }

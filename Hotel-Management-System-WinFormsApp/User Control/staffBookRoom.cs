@@ -77,7 +77,7 @@ namespace Hotel_Management_System_WinFormsApp
 
         private void staffBook_bookButton_Click(object sender, EventArgs e)
         {
-            if (staffBook_status.Text != "Availabel")
+            if (staffBook_status.Text != "Active")
             {
                 MessageBox.Show("Room is unavailabel!", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

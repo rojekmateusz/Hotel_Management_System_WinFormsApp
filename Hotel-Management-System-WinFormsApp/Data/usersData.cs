@@ -21,6 +21,7 @@ namespace Hotel_Management_System_WinFormsApp
         public string Status { get; set; }
         public string DateReg { get; set; }
         
+        public string Notepad { get; set; }
         public List<usersData> listuserData()
         {
             List<usersData> usersList = new List<usersData>();
@@ -42,6 +43,7 @@ namespace Hotel_Management_System_WinFormsApp
                         userData.Role = sqlDataReader["role"].ToString();
                         userData.Status = sqlDataReader["status"].ToString();
                         userData.DateReg = sqlDataReader["register_date"].ToString();
+                        
 
                         usersList.Add(userData);
                     }
