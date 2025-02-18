@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
+using System.Configuration;
 
 namespace Hotel_Management_System_WinFormsApp
 {
     public partial class admin_dashboard : UserControl
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
-            "Integrated Security=True;Connect Timeout=30";
-
+       
+        string connectionString = ConfigurationManager.ConnectionStrings["HotelDb"].ConnectionString;
         public admin_dashboard()
         {
             InitializeComponent();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,9 +14,8 @@ namespace Hotel_Management_System_WinFormsApp
 {
     public partial class admin_adduser : UserControl
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
-            "Integrated Security=True;Connect Timeout=30";
-
+        
+        string connectionString = ConfigurationManager.ConnectionStrings["HotelDb"].ConnectionString;
         public admin_adduser()
         {
             InitializeComponent();

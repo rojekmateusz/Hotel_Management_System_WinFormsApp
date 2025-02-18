@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Hotel_Management_System_WinFormsApp
 {
     public partial class RegistrationForm : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
-            "Integrated Security=True;Connect Timeout=30";
-
+       
+        string connectionString = ConfigurationManager.ConnectionStrings["HotelDb"].ConnectionString;
         public RegistrationForm()
         {
             InitializeComponent();

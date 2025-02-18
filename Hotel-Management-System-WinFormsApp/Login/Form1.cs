@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace Hotel_Management_System_WinFormsApp
 {
     public partial class Form1 : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;Integrated Security=True;Connect Timeout=30";
+        string connectionString = ConfigurationManager.ConnectionStrings["HotelDb"].ConnectionString;
         public Form1()
         {
             InitializeComponent();
@@ -55,7 +57,7 @@ namespace Hotel_Management_System_WinFormsApp
                     {
                         command.Parameters.AddWithValue("@user", login_username.Text.Trim());
                         command.Parameters.AddWithValue("@password", login_password.Text.Trim());
-                        
+
 
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                         DataTable dataTable = new DataTable();
@@ -67,12 +69,12 @@ namespace Hotel_Management_System_WinFormsApp
 
                             string InsertStatus = "UPDATE users SET status = @status WHERE username = @user AND password = @password";
 
-                            using(SqlCommand cmd = new SqlCommand(InsertStatus, connect))
+                            using (SqlCommand cmd = new SqlCommand(InsertStatus, connect))
                             {
                                 cmd.Parameters.AddWithValue("@user", login_username.Text.Trim());
                                 cmd.Parameters.AddWithValue("@password", login_password.Text.Trim());
                                 cmd.Parameters.AddWithValue("@status", "Active");
-                                cmd.ExecuteNonQuery();                                                            
+                                cmd.ExecuteNonQuery();
                             }
 
                             string selectRole = "SELECT role FROM users WHERE username = @user AND password = @password";

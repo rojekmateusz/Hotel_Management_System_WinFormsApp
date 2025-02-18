@@ -10,15 +10,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
 using System.Net;
+using System.Configuration;
 
 namespace Hotel_Management_System_WinFormsApp
 {
 
     internal class customersData
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\rojek\\HotelManagmentSystem_Db.mdf;" +
-            "Integrated Security=True;Connect Timeout=30";
-    
+       
+        string connectionString = ConfigurationManager.ConnectionStrings["HotelDb"].ConnectionString;
         public int ID { get; set; }
         public string BookID { get; set; }
         public string Fullname { get; set; }
