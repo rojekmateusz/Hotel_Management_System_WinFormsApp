@@ -146,19 +146,7 @@
             this.dashbord_button.Text = "DASHBOARD";
             this.dashbord_button.UseVisualStyleBackColor = false;
             this.dashbord_button.Click += new System.EventHandler(this.dashbord_button_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.admin_dashboard1);
-            this.panel3.Controls.Add(this.staffBookRoom1);
-            this.panel3.Controls.Add(this.admin_customers1);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 640);
-            this.panel3.TabIndex = 5;
+            
             // 
             // admin_customers1
             // 
@@ -199,6 +187,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.admin_dashboard1);
+            this.panel3.Controls.Add(this.staffBookRoom1);
+            this.panel3.Controls.Add(this.admin_customers1);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1100, 640);
+            this.panel3.TabIndex = 5;
 
         }
 
