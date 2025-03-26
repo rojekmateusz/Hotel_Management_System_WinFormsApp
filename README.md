@@ -11,8 +11,8 @@ A professional desktop application built with Windows Forms (.NET) for comprehen
 - **Password:** password
 
 #### User Access
-- **Login:** mateusz
-- **Password:** mateusz123
+- **Login:** user1
+- **Password:** password1
 
 ### 🚀 Features
 
@@ -35,7 +35,6 @@ A professional desktop application built with Windows Forms (.NET) for comprehen
 #### Backend
 - C# (.NET Framework 4.8)
 - MS SQL Server (LocalDB)
-- ADO.NET for database operations
 
 #### Frontend
 - Windows Forms
