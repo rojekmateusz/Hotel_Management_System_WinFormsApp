@@ -66,9 +66,12 @@ Press F5 in Visual Studio
 
 ### 📸 Screenshots
 <div align="center">
-  <img src="path_to_login_screenshot.png" alt="Login Screen" width="400"/>
-  <img src="path_to_dashboard_screenshot.png" alt="Dashboard" width="400"/>
+  <img src="https://github.com/user-attachments/assets/e55b14b6-74bb-4995-91ec-238718fea973" alt="Login Screen" width="400"/>
+  <img src="https://github.com/user-attachments/assets/5abffcad-0067-49a7-92bf-44876173847c" alt="Dashboard" width="400"/>
+  <img src="https://github.com/user-attachments/assets/248be51b-b7b8-4c0a-aaea-860bcbc952d6" alt="Dashboard" width="400"/>
+  <img src="https://github.com/user-attachments/assets/111a2d84-eb13-4cee-856a-0a545e897c8b" alt="Dashboard" width="400"/>
 </div>
+
 
 ### 🔒 Security Features
 - Password hashing
